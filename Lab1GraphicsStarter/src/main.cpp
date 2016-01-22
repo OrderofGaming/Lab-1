@@ -54,6 +54,28 @@ void InitializeCube()
 
 	// Repeat the above for the texture coords and normals
 
+	AttributeDescriptor attribNormals;
+	attribNormals.attributeLocation = AttributeLocations::NORMAL;
+	attribNormals.attributeName = "normals";
+	attribNormals.data = (void*)normal;
+	attribNormals.elementSize = sizeof(float);
+	attribNormals.elementType = GL_FLOAT;
+	attribNormals.numElements = sizeof(normal) / sizeof(float);
+	attribNormals.numElementsPerAttrib = 3;
+
+	vbo.addAttributeArray(attribNormals);
+
+	/*AttributeDescriptor attribTexcoords;
+	attribTexcoords.attributeLocation = AttributeLocations::TEX_COORD;
+	attribTexcoords.attributeName = "texcoords";
+	attribTexcoords.data = (void*)texcoord;
+	attribTexcoords.elementSize = sizeof(float);
+	attribTexcoords.elementType = GL_FLOAT;
+	attribTexcoords.numElements = sizeof(texcoord) / sizeof(float);
+	attribTexcoords.numElementsPerAttrib = 2;
+
+	vbo.addAttributeArray(attribTexcoords);*/
+
 	vbo.createVBO(false);
 }
 

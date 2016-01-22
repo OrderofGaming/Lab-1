@@ -1,0 +1,60 @@
+﻿Build started 1/22/2016 1:27:22 PM.
+     1>Project "C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\Tutorial\Tutorial.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\include\\" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\Tutorial\Intermediate\Debug\\" /Fd"C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\Tutorial\Intermediate\Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\main.cpp
+         main.cpp
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\jointtypes.h(35): warning C4251: 'TTK::JointDescriptor::jointName' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'TTK::JointDescriptor'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\jointtypes.h(36): warning C4251: 'TTK::JointDescriptor::jointParent' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'TTK::JointDescriptor'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\jointtypes.h(42): warning C4251: 'TTK::JointDescriptor::jointPositions' : class 'std::vector<TTK::Vector3,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of struct 'TTK::JointDescriptor'
+                 with
+                 [
+                     _Ty=TTK::Vector3
+                 ]
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\jointtypes.h(43): warning C4251: 'TTK::JointDescriptor::jointRotations' : class 'std::vector<TTK::Quaternion,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of struct 'TTK::JointDescriptor'
+                 with
+                 [
+                     _Ty=TTK::Quaternion
+                 ]
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\jointtypes.h(44): warning C4251: 'TTK::JointDescriptor::jointScales' : class 'std::vector<float,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of struct 'TTK::JointDescriptor'
+                 with
+                 [
+                     _Ty=float
+                 ]
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\htrloader.h(50): warning C4251: 'TTK::HTRLoader::fileType' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'TTK::HTRLoader'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\htrloader.h(51): warning C4251: 'TTK::HTRLoader::dataType' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'TTK::HTRLoader'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\htrloader.h(62): warning C4251: 'TTK::HTRLoader::calibrationUnits' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'TTK::HTRLoader'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\htrloader.h(64): warning C4251: 'TTK::HTRLoader::rotationUnits' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'TTK::HTRLoader'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\htrloader.h(69): warning C4251: 'TTK::HTRLoader::jointDescriptors' : class 'std::vector<TTK::JointDescriptor,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'TTK::HTRLoader'
+                 with
+                 [
+                     _Ty=TTK::JointDescriptor
+                 ]
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\pointhandle.h(24): warning C4251: 'TTK::PointHandle::label' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'TTK::PointHandle'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\gameobject.h(30): warning C4251: 'TTK::GameObject::children' : class 'std::vector<TTK::GameObject *,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of class 'TTK::GameObject'
+                 with
+                 [
+                     _Ty=TTK::GameObject *
+                 ]
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\gameobject.h(64): warning C4251: 'TTK::GameObject::name' : class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'TTK::GameObject'
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\animationmanager.h(32): warning C4251: 'TTK::AnimationManager::htrFiles' : class 'std::map<std::string,TTK::HTRLoader,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'TTK::AnimationManager'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=TTK::HTRLoader
+                 ]
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\include\ttk\animationmanager.h(33): warning C4251: 'TTK::AnimationManager::animationClips' : class 'std::map<std::string,TTK::AnimationClip,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' needs to have dll-interface to be used by clients of class 'TTK::AnimationManager'
+                 with
+                 [
+                     _Kty=std::string
+         ,            _Ty=TTK::AnimationClip
+                 ]
+     1>c:\the true source\infr-2350-lab_1\lab1graphicsstarter\src\main.cpp(164): warning C4065: switch statement contains 'default' but no 'case' labels
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\bin\Debug\Tutorial.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\lib\\" glut32.lib glew32s.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\bin\Debug\Tutorial.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\bin\Debug\Tutorial.lib" /MACHINE:X86 "C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\Tutorial\Intermediate\Debug\main.obj"
+         "C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\Tutorial\Intermediate\Debug\VertexBufferObject.obj"
+         Tutorial.vcxproj -> C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\bin\Debug\Tutorial.exe
+     1>Done Building Project "C:\The True Source\INFR-2350-Lab_1\Lab1GraphicsStarter\Tutorial\Tutorial.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.31

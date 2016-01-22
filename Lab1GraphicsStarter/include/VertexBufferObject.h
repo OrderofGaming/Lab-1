@@ -61,6 +61,8 @@ public:
 	VertexBufferObject();
 	~VertexBufferObject();
 
+	GLuint* getVBOid();
+
 	// Pass in AttributeDescriptor descriptors for each attribute
 	// this object will have.
 	void addAttributeArray(AttributeDescriptor attrib);

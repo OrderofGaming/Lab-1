@@ -4,16 +4,19 @@
 VertexBufferObject::VertexBufferObject()
 {
 	// Initialize handles to zero
+	vaoHandle = 0;
 }
 
 VertexBufferObject::~VertexBufferObject()
 {
 	// Free up any resources
+	destroy();
 }
 
 void VertexBufferObject::addAttributeArray(AttributeDescriptor attrib)
 {
 	// Push the new attrib into the vector of AttributeDescriptors
+	attributeDescriptors.push_back(attrib);
 }
 
 void VertexBufferObject::createVBO(bool interleave /*= true*/)
@@ -22,8 +25,12 @@ void VertexBufferObject::createVBO(bool interleave /*= true*/)
 	// A VAO encapsulates all of the necessary state changes for rendering
 	// call glGenVertexArrays
 
+	glGenVertexArrays(1, &vaoHandle);
+	
 	// Step 2: Bind the vertex array
 	// call glBindVertexArray
+
+	glBindVertexArray(vaoHandle);
 
 	if (!interleave) // not interleaving
 	{
@@ -35,6 +42,8 @@ void VertexBufferObject::createVBO(bool interleave /*= true*/)
 
 		// call glGenBuffers with the number of attributes stored in the attributeDescriptors vector
 		// You will want to store these VBO in the vboHandles vector
+		glGenBuffers(numBuffers, &_vboHandles[0]);
+		vboHandles = _vboHandles;
 
 		// for each vbo...
 		for (int i = 0; i < vboHandles.size(); i++)
@@ -44,15 +53,20 @@ void VertexBufferObject::createVBO(bool interleave /*= true*/)
 			// specified in the vertex shader. This is how you tell OpenGL what data goes
 			// to which layout location.
 
+			glEnableVertexAttribArray(attributeDescriptors[i].attributeLocation);
+
 			// Step 5: Bind the current VBO
 			glBindBuffer(GL_ARRAY_BUFFER, vboHandles[i]);
 
 			// Step 6: Send data to the GPU
 			// Call glBufferData
+			glBufferData(GL_ARRAY_BUFFER, attributeDescriptors[i].elementSize * attributeDescriptors[i].numElements,
+				attributeDescriptors[i].data, GL_STATIC_DRAW);
 
 			// Step 7: Set up the attribute pointer
 			// This is how we tell OpenGL how the data in the VBO is laid out
 			// call glVertexAttribPointer
+			glVertexAttribPointer(attributeDescriptors[i].attributeLocation, attributeDescriptors[i].numElementsPerAttrib, attributeDescriptors[i].elementType, GL_FALSE, 0, 0);
 
 			// Step 8: Unbind the VBO
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -85,10 +99,13 @@ void VertexBufferObject::draw()
 {
 	// Step 1: Bind the VAO
 	// Call: glBindVertexArray
+	glBindVertexArray(vaoHandle);
 
 	// Step 2: Draw
 	// Call either glDrawArrays or glDrawElements
 	// Only one will work. I'll let you figure out which :)
+	int numVerts = attributeDescriptors[0].numElements / attributeDescriptors[0].numElementsPerAttrib;
+	glDrawArrays(GL_TRIANGLES, 0, numVerts);
 }
 
 void VertexBufferObject::destroy()
